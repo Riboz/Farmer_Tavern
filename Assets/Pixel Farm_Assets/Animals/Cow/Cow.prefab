@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1712482914318470428}
   - component: {fileID: 1712482914318470429}
   - component: {fileID: 1712482914318470431}
+  - component: {fileID: -7440029044809586214}
   m_Layer: 0
   m_Name: Cow
   m_TagString: Untagged
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 2074301008, guid: 9a3fc60defd30b540a8f44261bd6a2a9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -105,3 +106,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &-7440029044809586214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1712482914318470418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8b52da870dacc84b8d0b89f9d1e5cc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown_Drop_cow: 5
+  milk: {fileID: 9111157174785220528, guid: 04b80a490dea662469fee724e2f3c3dd, type: 3}
+  Cow_Sound: {fileID: 0}

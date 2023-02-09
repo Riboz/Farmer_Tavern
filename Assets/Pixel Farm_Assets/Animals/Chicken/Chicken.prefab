@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8191019347835938336}
   - component: {fileID: 8191019347835938337}
   - component: {fileID: 8191019347835938339}
+  - component: {fileID: 1781853171164677610}
   m_Layer: 0
   m_Name: Chicken
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8191019347835938366}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.0305774, y: -1.0587388, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -1612644013, guid: 879c64b6f676fd944bffb0283303eda6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -105,3 +106,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &1781853171164677610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8191019347835938366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 907aa60a082f97c48bd873102f553f64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown_Dropz: 0
+  egg: {fileID: 5809760335228777010, guid: d75a77a041dacb74cb1ca9046ee63023, type: 3}
+  chicken_Sound: {fileID: 0}

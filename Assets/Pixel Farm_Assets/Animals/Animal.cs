@@ -5,33 +5,41 @@ using UnityEngine;
 public class Animal : MonoBehaviour
 {
     [Header("Animal animation")]
-   public Animator animator;
+    Animator animator;
 
    [Header("Animal_Voice")]
-   public AudioSource animal_Audiosource;
-   public AudioClip animal_Audioclip;
+    AudioSource animal_Audiosource;
+    AudioClip animal_Audioclip;
 
    [Header("Animal Dropping")]
-   [SerializeField] public int cooldown_Drop;
-   [SerializeField] public GameObject spawning_Item;
+   int cooldown_Drop,dropped_item_Count;
+   GameObject spawned_Item,spawning_Item;
 
    [Header("animal is active ?")]
-   bool active_animal;
+   bool drop_Cantook,  active_Animal;
+   // private Player player;
 
    // alt classta active bool methodunun içini istenilen değerlerle doldurup çalıştır
-    public bool active(int animal_cooldown_drop,GameObject drop_Item,AudioClip audio_animal)
+    public bool active(int animal_cooldown_drop,GameObject drop_Item,AudioClip audio_animal,Vector3 AnimalT)
     {
                
         // methodda Doldurulan değerler gerekli olan coroutinlere aktar ve corotinleri çalıştır
 
-        StartCoroutine(Animal_Drop(animal_cooldown_drop,drop_Item));   
+        //
 
-        StartCoroutine(Animal_Voice(audio_animal));
+        // player=gameobject.findobjectwithtaq("Player");
+
+        //
+
+        StartCoroutine(Animal_Drop(animal_cooldown_drop,drop_Item,AnimalT));   
+
+      //  StartCoroutine(Animal_Voice(audio_animal));
+
         // eğer 54. satır çalışmazsa buranın altına bak
-        return active_animal=true;
+        return true;
     
     }
-    IEnumerator Animal_Drop(int animal_cooldown_drop,GameObject drop_Item)
+    IEnumerator Animal_Drop(int animal_cooldown_drop,GameObject drop_Item,Vector3 AnimalT)
    {
         // parametreleri  eşitliyor
         cooldown_Drop=animal_cooldown_drop;
@@ -45,21 +53,47 @@ public class Animal : MonoBehaviour
             if(Timer==cooldown_Drop)
             {
                 //itemini droplasın transfrom positionunu_ayarlarsın
-                Instantiate(spawning_Item,this.transform.position,Quaternion.identity);
-                Timer=0;
-
+               
+                    if(dropped_item_Count<1)
+                    {
+                      dropped_item_Count+=1;
+                      spawned_Item=Instantiate(spawning_Item,AnimalT,Quaternion.identity);
+                      drop_Cantook=true;
+                    }
+                    
+                // hayvanın loot functionu açılsın
+                StartCoroutine(Animal_Drop(cooldown_Drop,drop_Item,AnimalT));
             }
         }
    }
+   
+   public void Takes_Items()
+   {
+        if(drop_Cantook)
+        {
+            Destroy(spawned_Item);
+            dropped_item_Count=0;
+            drop_Cantook=false;
+            //forla dizinin null una eklesin
+            
+            //player.Earn_What(bu bir dizidir)+=egg;
+        }
+   }
+  // ineğin olduğu gridi Otomatik olarak bulan bir function yarat ve bu functionu activein içine koy sonrasında ise 
+  // ineğin olduğa gride tıklanıldığında inekdeki (animallardaki) Alınmaya hazır olan itemler bize gelsin ke gelirken ineğin altındaki item gitsin;
+  // bunun için bütün animallar playere bağlı olmalı vb vb
+
+
+
 
     IEnumerator Animal_Voice(AudioClip audio_animal)
     {
         // alt classdan alınan asıl hayvanın audio clipi eşleniyor
-
-        // eğer yanlış çalışırsa buraya (active_animal=true;) ve 31. satırdaki retun active_animal=true yu sil düz return true yap
+        active_Animal=true;
+        // eğer yanlı çalışırsa buraya (active_animal=true;) ve 31. satırdaki retun active_animal=true yu sil düz return true yap
         animal_Audioclip=audio_animal;
 
-        while(active_animal)
+        while(active_Animal)
         {
             //4-9 saniyeler arasında ineği bağırttırıyor
             yield return new WaitForSeconds((int)Random.Range(4,10));
