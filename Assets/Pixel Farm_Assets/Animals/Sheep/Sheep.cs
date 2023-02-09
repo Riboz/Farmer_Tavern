@@ -11,7 +11,7 @@ public class Sheep : Animal
     // Start is called before the first frame update
     void Start()
     {
-        the_Sheep=this.transform.position+new Vector3(0,0.2f,0);
+        the_Sheep=this.transform.position+new Vector3(0,0.25f,0);
         active(cooldown_Drop_sheep,Cotton,sheep_Sound,the_Sheep);
     }
     void OnTriggerEnter2D(Collider2D Player)

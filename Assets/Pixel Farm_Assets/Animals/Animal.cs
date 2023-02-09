@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 // Tüm Animal objelerinde olucak olan class
-public class Animal : MonoBehaviour
+public class Animal : Buyable
 {
     [Header("Animal animation")]
     Animator animator;

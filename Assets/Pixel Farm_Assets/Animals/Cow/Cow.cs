@@ -12,7 +12,7 @@ public class Cow : Animal
     // Start is called before the first frame update
     void Start()
     {
-        The_cow=this.transform.position+new Vector3(0,0.2f,0);
+        The_cow=this.transform.position+new Vector3(0,0.35f,0);
         active(cooldown_Drop_cow,milk,Cow_Sound,The_cow);
     }
     

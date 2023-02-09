@@ -12,7 +12,7 @@ public class Chicken : Animal
     // Start is called before the first frame update
     void Start()
     {
-        The_Chicken=this.transform.position+new Vector3(0,0.2f,0);
+        The_Chicken=this.transform.position+new Vector3(0,0.25f,0);
         active(cooldown_Drop_chicken,egg,chicken_Sound,The_Chicken);
     }
     void OnTriggerEnter2D(Collider2D Player)

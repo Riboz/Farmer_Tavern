@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8191019347835938337}
   - component: {fileID: 8191019347835938339}
   - component: {fileID: 1781853171164677610}
+  - component: {fileID: 1943915584840282763}
   m_Layer: 0
   m_Name: Chicken
   m_TagString: Untagged
@@ -118,6 +119,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 907aa60a082f97c48bd873102f553f64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown_Dropz: 0
+  Cost: 12
+  cooldown_Drop_chicken: 2
   egg: {fileID: 5809760335228777010, guid: d75a77a041dacb74cb1ca9046ee63023, type: 3}
   chicken_Sound: {fileID: 0}
+--- !u!61 &1943915584840282763
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8191019347835938366}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.0666667, y: 1.0666667}
+    newSize: {x: 0.32, y: 0.32}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.0666667, y: 1.0666667}
+  m_EdgeRadius: 0

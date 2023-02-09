@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 1632330296200026153}
   - component: {fileID: 1632330296200026154}
   - component: {fileID: 1632330296200026152}
+  - component: {fileID: -3649003933053434113}
+  - component: {fileID: 1665314035256401942}
   m_Layer: 0
   m_Name: Sheep
   m_TagString: Untagged
@@ -105,3 +107,45 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &-3649003933053434113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1632330296200026155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce89994eb3e3fd74bb143bdcd605ea99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Cost: 5
+  cooldown_Drop_sheep: 3
+  Cotton: {fileID: 3127412541028190779, guid: 231a0f9a3750a9449a6b8d22db28e577, type: 3}
+  sheep_Sound: {fileID: 0}
+--- !u!61 &1665314035256401942
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1632330296200026155}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.0666667, y: 1.0666667}
+    newSize: {x: 0.32, y: 0.32}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.0666667, y: 1.0666667}
+  m_EdgeRadius: 0
