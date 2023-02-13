@@ -36,7 +36,8 @@ public Tile[] tiles;
         }
         if(nearestTile.isOccupied==false)
         {
-        Instantiate(buyable_place,nearestTile.transform.position,Quaternion.identity);
+        if(buyable_place.GetComponent<Buyable>().isAnimal){Instantiate(buyable_place,nearestTile.transform.position+new Vector3(0,0.2f,0),Quaternion.identity);}
+        else{Instantiate(buyable_place,nearestTile.transform.position,Quaternion.identity);}
         buyable_place=null;
         nearestTile.isOccupied=true;
         grid.SetActive(false);

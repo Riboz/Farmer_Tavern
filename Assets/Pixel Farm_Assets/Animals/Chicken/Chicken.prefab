@@ -120,6 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Cost: 12
+  isAnimal: 1
   cooldown_Drop_chicken: 2
   egg: {fileID: 5809760335228777010, guid: d75a77a041dacb74cb1ca9046ee63023, type: 3}
   chicken_Sound: {fileID: 0}

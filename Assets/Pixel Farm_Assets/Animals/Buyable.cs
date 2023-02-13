@@ -4,5 +4,6 @@ using UnityEngine;
 
 public class Buyable : MonoBehaviour
 {
-public int Cost; 
+public int Cost;
+public bool isAnimal; 
 }

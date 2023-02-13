@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3040270120001095635}
   - component: {fileID: 3040270120001095632}
+  - component: {fileID: -6225506316230211817}
   m_Layer: 0
   m_Name: Domates_Seed
   m_TagString: Untagged
@@ -84,3 +85,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-6225506316230211817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3040270120001095633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76e6d0d618a9c37488956364c14e4439, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Cost: 25
+  isAnimal: 0
+  seedSprite:
+  - {fileID: 92966241, guid: 14d0a109d8af35449835640bca96372c, type: 3}
+  - {fileID: 1518908680, guid: 14d0a109d8af35449835640bca96372c, type: 3}
+  - {fileID: 144516857, guid: 14d0a109d8af35449835640bca96372c, type: 3}
+  cooldown: 15
+  domatesSprites: []
