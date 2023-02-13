@@ -6,8 +6,13 @@ public class Plants : Buyable
 {
     public Sprite[] seedSprite;
     bool canHarvest;
+    public void TheSpriteArray(int length)
+    {
+        seedSprite=new Sprite[length];
+    }
     public bool active(int plantCooldown)
     {
+     
         StartCoroutine(Growth(plantCooldown));
         return true;
     }

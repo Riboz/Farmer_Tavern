@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7590607007409633635}
   - component: {fileID: 7590607007409633634}
+  - component: {fileID: -7060885523094376873}
   m_Layer: 0
   m_Name: Havuc_seed
   m_TagString: Untagged
@@ -84,3 +85,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-7060885523094376873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7590607007409633637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5df6880743369d045afc701673c1bf3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Cost: 10
+  isAnimal: 0
+  seedSprite: []
+  cooldown: 10
+  CarrotSprites:
+  - {fileID: 2056096447, guid: 14d0a109d8af35449835640bca96372c, type: 3}
+  - {fileID: -2103698316, guid: 14d0a109d8af35449835640bca96372c, type: 3}
+  - {fileID: -700997200, guid: 14d0a109d8af35449835640bca96372c, type: 3}

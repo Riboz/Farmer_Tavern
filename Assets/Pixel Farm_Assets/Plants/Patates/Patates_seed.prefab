@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4675108921764910741}
   - component: {fileID: 4675108921764910730}
+  - component: {fileID: -216792125137970715}
   m_Layer: 0
   m_Name: Patates_seed
   m_TagString: Untagged
@@ -84,3 +85,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-216792125137970715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4675108921764910731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9efa85ebe66da78479bf7026e5cc23b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Cost: 5
+  isAnimal: 0
+  seedSprite: []
+  cooldown: 3
+  PatatoSprites:
+  - {fileID: 557793331, guid: 14d0a109d8af35449835640bca96372c, type: 3}
+  - {fileID: 1385480676, guid: 14d0a109d8af35449835640bca96372c, type: 3}
+  - {fileID: 299419092, guid: 14d0a109d8af35449835640bca96372c, type: 3}

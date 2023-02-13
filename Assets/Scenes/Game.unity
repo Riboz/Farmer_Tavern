@@ -1077,7 +1077,7 @@ MonoBehaviour:
         m_MethodName: BuyBuyable
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: -3649003933053434113, guid: 57605ee0d7405cd40922eef7b39cc75f, type: 3}
+          m_ObjectArgument: {fileID: -3428678886451155223, guid: fb090bc29300fd04e843184d684450e3, type: 3}
           m_ObjectArgumentAssemblyTypeName: Buyable, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -20693,7 +20693,7 @@ MonoBehaviour:
         m_MethodName: BuyBuyable
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: -7440029044809586214, guid: f8a7b164a4b2b2842bcec107783f732c, type: 3}
+          m_ObjectArgument: {fileID: -7060885523094376873, guid: 1cdd10c1b3c23eb438c8566e1dfc1f51, type: 3}
           m_ObjectArgumentAssemblyTypeName: Buyable, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -21740,7 +21740,7 @@ MonoBehaviour:
         m_MethodName: BuyBuyable
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 1781853171164677610, guid: 5a538181aabaca441a312d6d155d06a4, type: 3}
+          m_ObjectArgument: {fileID: -216792125137970715, guid: 51833d2d310fdbd4fb29ed51912b740d, type: 3}
           m_ObjectArgumentAssemblyTypeName: Buyable, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0

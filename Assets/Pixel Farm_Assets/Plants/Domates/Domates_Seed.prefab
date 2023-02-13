@@ -99,9 +99,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Cost: 25
   isAnimal: 0
-  seedSprite:
+  seedSprite: []
+  cooldown: 15
+  domatesSprites:
   - {fileID: 92966241, guid: 14d0a109d8af35449835640bca96372c, type: 3}
   - {fileID: 1518908680, guid: 14d0a109d8af35449835640bca96372c, type: 3}
   - {fileID: 144516857, guid: 14d0a109d8af35449835640bca96372c, type: 3}
-  cooldown: 15
-  domatesSprites: []

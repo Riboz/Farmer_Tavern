@@ -2,21 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Domates : Plants
+public class Patato : Plants
 {
-   
-    [SerializeField]private int cooldown;
-    [SerializeField] private Sprite[]domatesSprites;
+     [SerializeField]private int cooldown;
+    [SerializeField] private Sprite[]PatatoSprites;
     private int length;
+    
     Vector3 thePlant;
     // Start is called before the first frame update
     void Start()
     {
-        length=domatesSprites.Length;
+        length=PatatoSprites.Length;
         TheSpriteArray(length);
-        for(int i=0;i<domatesSprites.Length;i++)
+
+        for(int i=0;i<PatatoSprites.Length;i++)
         {
-         seedSprite[i]=domatesSprites[i];
+         seedSprite[i]=PatatoSprites[i];
         }
        
         active(cooldown);
@@ -28,5 +29,4 @@ public class Domates : Plants
            Takes_Items();
         }
     }
-   
 }
