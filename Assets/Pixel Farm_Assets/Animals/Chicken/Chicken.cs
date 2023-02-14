@@ -13,7 +13,7 @@ public class Chicken : Animal
     void Start()
     {
         The_Chicken=this.transform.position+new Vector3(0,0.25f,0);
-        active(cooldown_Drop_chicken,egg,chicken_Sound,The_Chicken);
+        active(cooldown_Drop_chicken,egg,chicken_Sound,The_Chicken,"Egg");
     }
     void OnTriggerEnter2D(Collider2D Player)
     {

@@ -20,7 +20,7 @@ public class Patato : Plants
          seedSprite[i]=PatatoSprites[i];
         }
        
-        active(cooldown);
+        active(cooldown,"Potato");
     }
     void OnTriggerEnter2D(Collider2D Player)
     {

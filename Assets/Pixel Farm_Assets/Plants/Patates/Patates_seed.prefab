@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4675108921764910741}
   - component: {fileID: 4675108921764910730}
   - component: {fileID: -216792125137970715}
+  - component: {fileID: 8638910183416882435}
   m_Layer: 0
   m_Name: Patates_seed
   m_TagString: Untagged
@@ -97,11 +98,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9efa85ebe66da78479bf7026e5cc23b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cost: 5
+  Cost: 40
   isAnimal: 0
   seedSprite: []
-  cooldown: 3
+  cooldown: 120
   PatatoSprites:
   - {fileID: 557793331, guid: 14d0a109d8af35449835640bca96372c, type: 3}
   - {fileID: 1385480676, guid: 14d0a109d8af35449835640bca96372c, type: 3}
   - {fileID: 299419092, guid: 14d0a109d8af35449835640bca96372c, type: 3}
+--- !u!61 &8638910183416882435
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4675108921764910731}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.000000044703484, y: -0.1408223}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.2307693, y: 1.2307693}
+    newSize: {x: 0.16, y: 0.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.45381865, y: 0.29842874}
+  m_EdgeRadius: 0

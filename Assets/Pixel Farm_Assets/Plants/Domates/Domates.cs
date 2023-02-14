@@ -19,7 +19,7 @@ public class Domates : Plants
          seedSprite[i]=domatesSprites[i];
         }
        
-        active(cooldown);
+        active(cooldown,"Tomato");
     }
     void OnTriggerEnter2D(Collider2D Player)
     {

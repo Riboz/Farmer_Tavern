@@ -18,7 +18,7 @@ public class Turp : Plants
          seedSprite[i]=turpSprites[i];
         }
        
-        active(cooldown);
+        active(cooldown,"Turp");
     }
     void OnTriggerEnter2D(Collider2D Player)
     {

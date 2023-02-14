@@ -19,7 +19,7 @@ public class Carrot : Plants
          seedSprite[i]=CarrotSprites[i];
         }
        
-        active(cooldown);
+        active(cooldown,"Carrot");
     }
     void OnTriggerEnter2D(Collider2D Player)
     {

@@ -17,14 +17,17 @@ public class Animal : Buyable
 
    [Header("animal is active ?")]
    bool drop_Cantook,  active_Animal;
+   public string Type;
+   [Header("Game Manager")]
+   GameManager gameManager;
    // private Player player;
 
    // alt classta active bool methodunun içini istenilen değerlerle doldurup çalıştır
-    public bool active(int animal_cooldown_drop,GameObject drop_Item,AudioClip audio_animal,Vector3 AnimalT)
+    public bool active(int animal_cooldown_drop,GameObject drop_Item,AudioClip audio_animal,Vector3 AnimalT,string type)
     {
-               
+        Type=type;    
         // methodda Doldurulan değerler gerekli olan coroutinlere aktar ve corotinleri çalıştır
-
+        gameManager=GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         //
 
         // player=gameobject.findobjectwithtaq("Player");
@@ -71,6 +74,7 @@ public class Animal : Buyable
    {
         if(drop_Cantook)
         {
+            gameManager.Adding(Type);
             Destroy(spawned_Item);
             dropped_item_Count=0;
             drop_Cantook=false;

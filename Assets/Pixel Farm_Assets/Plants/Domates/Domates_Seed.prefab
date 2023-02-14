@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3040270120001095635}
   - component: {fileID: 3040270120001095632}
   - component: {fileID: -6225506316230211817}
+  - component: {fileID: 114625846721439269}
   m_Layer: 0
   m_Name: Domates_Seed
   m_TagString: Untagged
@@ -97,11 +98,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76e6d0d618a9c37488956364c14e4439, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cost: 25
+  Cost: 20
   isAnimal: 0
+  tile: {fileID: 0}
   seedSprite: []
-  cooldown: 15
+  cooldown: 10
   domatesSprites:
   - {fileID: 92966241, guid: 14d0a109d8af35449835640bca96372c, type: 3}
   - {fileID: 1518908680, guid: 14d0a109d8af35449835640bca96372c, type: 3}
   - {fileID: 144516857, guid: 14d0a109d8af35449835640bca96372c, type: 3}
+--- !u!61 &114625846721439269
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3040270120001095633}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.016470134, y: 0.008235186}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.2307693, y: 1.2307693}
+    newSize: {x: 0.16, y: 0.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.6872524, y: 0.637842}
+  m_EdgeRadius: 0

@@ -121,7 +121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Cost: 12
   isAnimal: 1
-  cooldown_Drop_chicken: 2
+  cooldown_Drop_chicken: 70
   egg: {fileID: 5809760335228777010, guid: d75a77a041dacb74cb1ca9046ee63023, type: 3}
   chicken_Sound: {fileID: 0}
 --- !u!61 &1943915584840282763
@@ -141,7 +141,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.0666667, y: 1.0666667}
+    oldSize: {x: 1.28, y: 1.28}
     newSize: {x: 0.32, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
