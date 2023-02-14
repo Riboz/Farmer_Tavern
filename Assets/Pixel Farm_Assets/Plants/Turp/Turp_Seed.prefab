@@ -100,8 +100,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Cost: 40
   isAnimal: 0
+  tile: {fileID: 0}
   seedSprite: []
-  cooldown: 120
+  cooldown: 15
   turpSprites:
   - {fileID: 358046745, guid: 14d0a109d8af35449835640bca96372c, type: 3}
   - {fileID: 959514103, guid: 14d0a109d8af35449835640bca96372c, type: 3}

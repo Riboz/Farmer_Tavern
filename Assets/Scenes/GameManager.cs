@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
   [Header("Inventory")]
-  public int Egg,Cotton,Milk,Carrot,Tomato,Potato,Turp;
-  public int Gold;
+  public int Egg,Cotton,Milk,Carrot,Tomato,Potato,Turp,Gold;
+  
   [Header("UI")]
   public Text Gold_Display;
   [Header("Others")]

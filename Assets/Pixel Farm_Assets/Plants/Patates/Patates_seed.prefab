@@ -100,8 +100,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Cost: 40
   isAnimal: 0
+  tile: {fileID: 0}
   seedSprite: []
-  cooldown: 120
+  cooldown: 15
   PatatoSprites:
   - {fileID: 557793331, guid: 14d0a109d8af35449835640bca96372c, type: 3}
   - {fileID: 1385480676, guid: 14d0a109d8af35449835640bca96372c, type: 3}
