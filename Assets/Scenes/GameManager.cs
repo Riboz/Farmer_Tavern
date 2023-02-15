@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class GameManager : MonoBehaviour
 {
   [Header("Inventory")]
@@ -15,46 +16,60 @@ public class GameManager : MonoBehaviour
   public CustomCursor customCursor;
   public Tile[] tiles;
   Buyable buyable_place;
+  DOTweenManager dot;
+  [SerializeField] private bool inArea;
   
   void Start()
   {
     //ınventorye egg coton mil carrot fln koy
+    dot=GameObject.FindWithTag("Dot").GetComponent<DOTweenManager>();
   }
 
     // Update is called once per frame
     void Update()
-    {
+{
         Gold_Display.text=Gold.ToString();
-    if(Input.GetMouseButtonDown(0) && buyable_place != null)
-    {
-        Tile nearestTile = null;
-        float nearestDistance = float.MaxValue;
-        foreach(Tile tile in tiles)
+    
+     if(inArea)
+    {  
+        if(Input.GetMouseButtonDown(0) && buyable_place != null)
         {
-            float dist = Vector2.Distance(tile.transform.position,Camera.main.ScreenToWorldPoint(Input.mousePosition));
-            if(dist<nearestDistance)
+            Tile nearestTile = null;
+            float nearestDistance = float.MaxValue;
+            foreach(Tile tile in tiles)
             {
-                nearestDistance = dist;
-                nearestTile = tile;
+                float dist = Vector2.Distance(tile.transform.position,Camera.main.ScreenToWorldPoint(Input.mousePosition));
+                if(dist<nearestDistance)
+                {
+                    nearestDistance = dist;
+                    nearestTile = tile;
+                }
             }
-        }
-        if(nearestTile.isOccupied == false)
-        {
-            buyable_place.TileFound(nearestTile);
-            if(buyable_place.GetComponent<Buyable>().isAnimal)
+            if(nearestTile.isOccupied == false)
             {
-                Instantiate(buyable_place , nearestTile.transform.position + new Vector3(0,0.2f,0) , Quaternion.identity);
-            }
-            else{Instantiate(buyable_place , nearestTile.transform.position , Quaternion.identity);}
+                buyable_place.TileFound(nearestTile);
+                if(buyable_place.GetComponent<Buyable>().isAnimal)
+                {
+                    Instantiate(buyable_place , nearestTile.transform.position + new Vector3(0,0.2f,0) , Quaternion.identity);
+                }
+                else
+                {
+                    Instantiate(buyable_place , nearestTile.transform.position , Quaternion.identity);
+                }
         
-            buyable_place = null;
-            nearestTile.isOccupied = true;
-            grid.SetActive(false);
-            customCursor.gameObject.SetActive(false);
-            Cursor.visible = true;
+                buyable_place = null;
+                nearestTile.isOccupied = true;
+                grid.SetActive(false);
+                customCursor.gameObject.SetActive(false);
+                Cursor.visible = true;
+                dot.shopButton.gameObject.SetActive(true);
+                
+                
+            }
         }
     }
-    }
+     else return;
+}
     public void BuyBuyable(Buyable buyable)
     {
         if(Gold >= buyable.Cost)
@@ -100,4 +115,24 @@ public class GameManager : MonoBehaviour
 
 
     }
+
+    public void OnTriggerEnter2D(Collider2D Mause)
+    {
+        if(Mause.gameObject.tag == "Cursor")
+        {
+            inArea=true;
+            Debug.Log("In");
+        }
+     
+    }
+    public void OnTriggerExit2D(Collider2D Mause)
+    {
+        if(Mause.gameObject.tag == "Cursor")
+        {
+            inArea=false;
+            Debug.Log("Out");
+        }
+     
+    }
+
 }
