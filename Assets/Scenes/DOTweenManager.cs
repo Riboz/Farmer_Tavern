@@ -17,13 +17,16 @@ public class DOTweenManager : MonoBehaviour
     // Update is called once per frame
     public void ShopButtonOpen()
     {
+        
         buyArea.transform.DOMoveX(64,0.2f);
         
         shopButton.gameObject.SetActive(false);
        
     }
+    
     public void ShopButtonExit()
     {
+        
         buyArea.transform.DOMoveX(-128,0.2f);
        
     }

@@ -7,17 +7,19 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
   [Header("Inventory")]
-  public int Egg,Cotton,Milk,Carrot,Tomato,Potato,Turp,Gold;
+  public int Egg,Cotton,Milk,Carrot,Tomato,Potato,Turp,Gold,currentCost;
   
   [Header("UI")]
   public Text Gold_Display;
+  public Button changeOpButton;
   [Header("Others")]
   public GameObject grid;
   public CustomCursor customCursor;
   public Tile[] tiles;
   Buyable buyable_place;
   DOTweenManager dot;
-  [SerializeField] private bool inArea;
+  [SerializeField] private bool inArea,changeOpinion;
+  public static bool canBuy;
   
   void Start()
   {
@@ -30,7 +32,7 @@ public class GameManager : MonoBehaviour
 {
         Gold_Display.text=Gold.ToString();
     
-     if(inArea)
+     if(inArea && !changeOpinion)
     {  
         if(Input.GetMouseButtonDown(0) && buyable_place != null)
         {
@@ -63,10 +65,21 @@ public class GameManager : MonoBehaviour
                 customCursor.gameObject.SetActive(false);
                 Cursor.visible = true;
                 dot.shopButton.gameObject.SetActive(true);
-                
+                changeOpButton.gameObject.SetActive(false);
                 
             }
         }
+    }
+     if(changeOpinion)
+    {
+       
+        buyable_place = null;
+        grid.SetActive(false);
+        customCursor.gameObject.SetActive(false);
+        Cursor.visible = true;
+        dot.shopButton.gameObject.SetActive(true);
+        changeOpinion = false;
+        
     }
      else return;
 }
@@ -74,12 +87,18 @@ public class GameManager : MonoBehaviour
     {
         if(Gold >= buyable.Cost)
         {
+            currentCost=buyable.Cost;
             customCursor.gameObject.SetActive(true);
             customCursor.GetComponent<SpriteRenderer>().sprite = buyable.GetComponent<SpriteRenderer>().sprite;
             buyable_place = buyable;
             grid.SetActive(true);
             Gold -= buyable.Cost;
+            changeOpButton.gameObject.SetActive(true);
 
+        }
+        else 
+        {
+            dot.shopButton.gameObject.SetActive(true);
         }
     }
     public void Adding(string type)
@@ -123,6 +142,7 @@ public class GameManager : MonoBehaviour
             inArea=true;
             Debug.Log("In");
         }
+      
      
     }
     public void OnTriggerExit2D(Collider2D Mause)
@@ -132,7 +152,15 @@ public class GameManager : MonoBehaviour
             inArea=false;
             Debug.Log("Out");
         }
+         
      
     }
+    public void ChangeOpinion()
+    {
+        changeOpinion=true;
+        Gold+=currentCost;
+        changeOpButton.gameObject.SetActive(false);
+    }
+    
 
 }
