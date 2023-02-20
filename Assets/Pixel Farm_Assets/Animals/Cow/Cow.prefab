@@ -121,7 +121,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Cost: 15
   isAnimal: 1
-  cooldown_Drop_cow: 90
+  tile: {fileID: 0}
+  Type: 
+  cooldown_Drop_cow: 15
   milk: {fileID: 9111157174785220528, guid: 04b80a490dea662469fee724e2f3c3dd, type: 3}
   Cow_Sound: {fileID: 0}
 --- !u!61 &9201920716673732359

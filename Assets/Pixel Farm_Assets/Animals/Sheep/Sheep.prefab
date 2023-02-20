@@ -121,7 +121,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Cost: 5
   isAnimal: 1
-  cooldown_Drop_sheep: 70
+  tile: {fileID: 0}
+  Type: 
+  cooldown_Drop_sheep: 20
   Cotton: {fileID: 3127412541028190779, guid: 231a0f9a3750a9449a6b8d22db28e577, type: 3}
   sheep_Sound: {fileID: 0}
 --- !u!61 &1665314035256401942

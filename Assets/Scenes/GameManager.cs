@@ -7,7 +7,8 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
   [Header("Inventory")]
-  public int Egg,Cotton,Milk,Carrot,Tomato,Potato,Turp,Gold,currentCost;
+  public int Gold,currentCost;
+  public int [] inventoryspace;
   
   [Header("UI")]
   public Text Gold_Display;
@@ -105,36 +106,35 @@ public class GameManager : MonoBehaviour
     {
        if(type == "Egg")
        {
-        Egg += 1;
+            inventoryspace[0] += 1;
        }
        else if(type == "Milk")
        {
-        Milk += 1;
+            inventoryspace[1] += 1;
        }
        else if(type == "Cotton")
        {
-        Cotton += 1;
+            inventoryspace[2] += 1;
        }
         else if(type == "Tomato")
        {
-        Tomato += 1;
+            inventoryspace[3] += 1;
        }
        else if(type == "Carrot")
        {
-        Carrot += 1;
+            inventoryspace[4] += 1;
        }
         else if(type == "Turp")
        {
-        Turp += 1;
+            inventoryspace[5] += 1;
        }
        else if(type == "Potato")
        {
-        Potato += 1;
+            inventoryspace[6] += 1;
        }
 
 
     }
-
     public void OnTriggerEnter2D(Collider2D Mause)
     {
         if(Mause.gameObject.tag == "Cursor")

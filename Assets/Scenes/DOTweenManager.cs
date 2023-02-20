@@ -30,6 +30,13 @@ public class DOTweenManager : MonoBehaviour
         buyArea.transform.DOMoveX(-500,0.2f);
        
     }
+    public void ShopButtonExitButton()
+    {
+        
+        buyArea.transform.DOMoveX(-500,0.2f);
+        shopButton.gameObject.SetActive(true);
+       
+    }
     public void TavernArea()
     {
         buyArea.transform.DOMoveX(-500,0.2f);
