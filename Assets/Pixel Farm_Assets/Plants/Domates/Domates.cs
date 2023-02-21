@@ -7,6 +7,7 @@ public class Domates : Plants
    
     [SerializeField]private int cooldown;
     [SerializeField] private Sprite[]domatesSprites;
+   
     private int length;
     Vector3 thePlant;
     // Start is called before the first frame update
@@ -25,6 +26,7 @@ public class Domates : Plants
     {
         if(Player.gameObject.CompareTag("Player"))
         {
+           
            Takes_Items();
         }
     }

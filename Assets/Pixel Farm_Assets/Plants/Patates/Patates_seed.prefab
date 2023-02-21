@@ -102,6 +102,7 @@ MonoBehaviour:
   isAnimal: 0
   tile: {fileID: 0}
   seedSprite: []
+  harvest: {fileID: 1221116343200394248, guid: 08e9badfd6b80854a9d537b3fac3772f, type: 3}
   cooldown: 15
   PatatoSprites:
   - {fileID: 557793331, guid: 14d0a109d8af35449835640bca96372c, type: 3}

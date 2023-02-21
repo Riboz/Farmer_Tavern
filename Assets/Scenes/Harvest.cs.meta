@@ -1,11 +1,9 @@
 fileFormatVersion: 2
-guid: 1aab1539b0b78de42a8373fca02f13c1
+guid: 5a3ca3b8621e1624ea9a3aad52feed94
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - tile: {instanceID: 0}
-  - harvest: {fileID: 1221116343200394248, guid: 08e9badfd6b80854a9d537b3fac3772f, type: 3}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

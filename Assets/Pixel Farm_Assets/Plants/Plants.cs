@@ -7,6 +7,7 @@ public class Plants : Buyable
     public Sprite[] seedSprite;
     bool canHarvest;
     string Type;
+     public ParticleSystem harvest;
     GameManager gameManager;
    
     public void TheSpriteArray(int length)
@@ -48,6 +49,7 @@ public class Plants : Buyable
 
             tile.GetComponent<Tile>().isOccupied=false;
             gameManager.Adding(Type);
+            Instantiate(harvest,this.transform.position,Quaternion.identity);
             Destroy(this.gameObject);
 
             // üstünde olduğu tile i tekrardan duzelt

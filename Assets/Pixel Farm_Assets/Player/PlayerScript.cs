@@ -6,6 +6,7 @@ public class PlayerScript : MonoBehaviour
 {
     private Rigidbody2D rb;
     [SerializeField] private int speed;
+  
     private string currentState;
     Animator anim;
     void Start()
