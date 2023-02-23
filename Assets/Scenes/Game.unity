@@ -21343,7 +21343,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Gold: 300
   currentCost: 0
+  beforeChosed: 0
+  newChosed: 0
+  Mission_array_Area: 0
   inventoryspace: 00000000000000000000000000000000000000000000000000000000
+  missionSpace: 000000000000000000000000
   Gold_Display: {fileID: 1268371781}
   changeOpButton: {fileID: 1987106539}
   grid: {fileID: 1646584710}
