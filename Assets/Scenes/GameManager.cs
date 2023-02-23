@@ -4,11 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class GameManager : MonoBehaviour
+public class GameManager : MissionSuccesClass
 {
   [Header("Inventory")]
-  public int Gold,currentCost;
+  public int Gold,currentCost,beforeChosed=0,newChosed,Mission_array_Area;
   public int [] inventoryspace;
+  public int [] missionSpace;
   
   [Header("UI")]
   public Text Gold_Display;
@@ -26,6 +27,8 @@ public class GameManager : MonoBehaviour
   {
     //ınventorye egg coton mil carrot fln koy
     dot=GameObject.FindWithTag("Dot").GetComponent<DOTweenManager>();
+    RandomMission();
+    
   }
 
     // Update is called once per frame
@@ -161,6 +164,32 @@ public class GameManager : MonoBehaviour
         Gold+=currentCost;
         changeOpButton.gameObject.SetActive(false);
     }
-    
+    public void RandomMission()
+    {
 
+    StartCoroutine(MissionCheck());
+
+    bool missionbool = true;
+    
+    int i = 0;
+    
+    while( missionbool )
+    {
+        
+        newChosed = Random.Range(0,6);
+        
+        if(newChosed != beforeChosed)
+        {
+           missionSpace[i] = newChosed;
+           i += 1;
+           beforeChosed = newChosed;
+           if(i == 3)
+           {
+            missionbool = false;
+           }
+          
+           
+        }
+    }
+    }
 }

@@ -9,6 +9,7 @@ public class Inventory : MonoBehaviour
     GameManager gameManager;
     [SerializeField]private Button[] inventoryspace; 
     [SerializeField]private GameObject inventoryPanel;
+    // shop açıkken invent açık olamaz bu durumu düzelt yarın
    // 0 egg/ 1 milk/ 2 cotton /3 tomato/ 4 carrot/ 5 turp /6 potato
     void Start()
     {
@@ -43,7 +44,9 @@ public class Inventory : MonoBehaviour
      inventoryPanel.transform.DOMoveY(2000,0.2f);
 
     }
+   
      
+     //
       
     void Update()
     {
