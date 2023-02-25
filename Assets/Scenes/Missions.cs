@@ -2,65 +2,73 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MissionSuccesClass : MonoBehaviour
+public class Missions : MonoBehaviour
 {
+public int theMission1,theMission2,theMission3;
+public float coolDown,timerforFreegold;
+GameManager gameManager;
+public bool missionComplete;
+  IEnumerator MissionMaker()
+ {
+    // 3 tane tür ve her türde random sayıda çeşit
 
-   int beforeChosed=0,newChosed;
-   public int [] missionSpace;
- public bool MissionSucces()
-        {
-         StopCoroutine(MissionCheck());
-         
-         StartCoroutine(MissionCheck());
-         //Gorev başarılı olunca araba gidiş ekle buraya 2 saniyede
-         
-         return true;
-        }
-        public IEnumerator MissionCheck()
-        {
-            // yeni görev gelicek araba gelsin
-            
-            yield return new WaitForSeconds(2f);
+    theMission1 = Random.Range(0,7);
 
-            RandomMission();
-
-            yield return new WaitForSeconds(15);
-            
-            // görevin süresi biter araba gider
-
-            yield return new WaitForSeconds(2f);
-
-            StartCoroutine(MissionCheck());
-        
-        }    
-        
-        
-        public void RandomMission()
-        {
-            
-
-            bool missionbool = true;
+    theMission2 = Random.Range(0,7);
     
-            int i = 0;
+    theMission3 = Random.Range(0,7);
     
-            while( missionbool )
+    if(theMission1 != theMission2 && theMission2 != theMission3 && theMission1 != theMission3)
     {
-        newChosed = Random.Range(0,6);
-        
-        if(newChosed != beforeChosed)
-        {
-           missionSpace[i] = newChosed;
-           i += 1;
-           beforeChosed = newChosed;
-           if(i == missionSpace.Length)
-           {
-            missionbool = false;
-           }
-          
-           
-           
-        }
+        //araba gelir
+        yield return new WaitForSeconds(coolDown);
+        Debug.Log("b");
+        StartCoroutine(Checker());
+        yield break;
     }
-        }
-    
+    else
+    {
+        StartCoroutine(MissionMaker());
+    }
+   
+ }
+IEnumerator Checker()
+ {
+    if(gameManager.inventoryspace[theMission1] > 0 && gameManager.inventoryspace[theMission2] > 0 && gameManager.inventoryspace[theMission3] > 0)
+    {
+        missionComplete=true;
+        StartCoroutine(CompleteMission());
+        yield break;
+    }
+    yield return new WaitForSeconds(1f);
+    if( !missionComplete ){StartCoroutine(Checker());}
+ }
+IEnumerator CompleteMission()
+ {
+    // araba gider görev paneli gider
+    yield return new WaitForSeconds(coolDown);
+    gameManager.inventoryspace[theMission1]-=1;
+    gameManager.inventoryspace[theMission2]-=1;
+    gameManager.inventoryspace[theMission3]-=1;
+    // para verir
+    missionComplete=false;
+    Debug.Log("A");
+    StartCoroutine(MissionMaker());
+    yield break;
+ }
+ void Start()
+ {
+ gameManager=GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+ StartCoroutine(MissionMaker());
+ }
+ void FixedUpdate()
+ {
+    timerforFreegold+=Time.deltaTime;
+    if(timerforFreegold>=60)
+    {
+        timerforFreegold=0;
+        gameManager.Gold+=50;
+    }
+ }
+
 }

@@ -4,10 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class GameManager : MissionSuccesClass
+public class GameManager : MonoBehaviour
 {
   [Header("Inventory")]
-  public int Gold,currentCost,Mission_array_Area;
+  public int Gold,currentCost;
   public int [] inventoryspace;
   
   
@@ -20,8 +20,8 @@ public class GameManager : MissionSuccesClass
   public Tile[] tiles;
   Buyable buyable_place;
   DOTweenManager dot;
-  [SerializeField] private bool cantDo,inArea,changeOpinion;
-  public bool[] missioncomp;
+  [SerializeField] private bool inArea,changeOpinion;
+ 
   public static bool canBuy;
   
   void Start()
@@ -29,67 +29,12 @@ public class GameManager : MissionSuccesClass
     //ınventorye egg coton mil carrot fln koy
     dot=GameObject.FindWithTag("Dot").GetComponent<DOTweenManager>();
     
-    StartCoroutine(MissionChecking());
+    
     
     
     
   }
-  public IEnumerator MissionChecking()
-        {
-                // daha iyi bir teknik bulmaya çalış
-        if(missioncomp[0] && inventoryspace[ missionSpace [0] ] != 0)
-        {
-            Debug.Log("Bu var");
-            missioncomp[0] = false;
-            inventoryspace[missionSpace[0]] -= 1;
-        }
-                yield return new WaitForSeconds(0.1f);
-         if(missioncomp[1] && inventoryspace[ missionSpace [1] ] != 0)
-        {
-            Debug.Log("Bu var");
-            missioncomp[1] = false;             
-            inventoryspace[missionSpace[1]] -=1 ;
-        }
-                yield return new WaitForSeconds(0.1f);
-         if(missioncomp[2] && inventoryspace[ missionSpace [2] ] != 0)
-        {
-            Debug.Log("Bu var");
-            missioncomp[2] = false;
-            inventoryspace[missionSpace[2]] -= 1;
-        }
-                yield return new WaitForSeconds(0.1f);
-         if(missioncomp[3] && inventoryspace[ missionSpace [3] ] != 0)
-        {
-            Debug.Log("Bu var");
-            missioncomp[3] = false;
-            inventoryspace[missionSpace[3]] -= 1;
-        }
-
-            int MisionCount=0;
-           for(int i = 0 ; i < missioncomp.Length ; i++)
-           {
-                if(missioncomp[i] == false)
-                {
-                    MisionCount += 1;
-                }
-                if(MisionCount == 4)
-                {
-                    for(int x = 0 ; x < missioncomp.Length ; x++)
-                    {
-                        missioncomp[x] = true;
-                    }
-                     //Gorev başarılı olunca araba gidiş ekle buraya
-                      Debug.Log("becerdi");
-                    yield return new WaitForSeconds(3f);
-                    MissionSucces();
-                   
-                }
-           }
-          
-            yield return new WaitForSeconds(1f);
-            StartCoroutine(MissionChecking());
-        
-        }    
+ 
 
     // Update is called once per frame
     void Update()
