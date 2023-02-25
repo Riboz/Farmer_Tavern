@@ -36,38 +36,38 @@ IEnumerator Checker()
  {
     if(gameManager.inventoryspace[theMission1] > 0 && gameManager.inventoryspace[theMission2] > 0 && gameManager.inventoryspace[theMission3] > 0)
     {
-        missionComplete=true;
+        missionComplete = true;
         StartCoroutine(CompleteMission());
         yield break;
     }
     yield return new WaitForSeconds(1f);
-    if( !missionComplete ){StartCoroutine(Checker());}
+    if( !missionComplete ){ StartCoroutine(Checker()); }
  }
 IEnumerator CompleteMission()
  {
     // araba gider görev paneli gider
     yield return new WaitForSeconds(coolDown);
-    gameManager.inventoryspace[theMission1]-=1;
-    gameManager.inventoryspace[theMission2]-=1;
-    gameManager.inventoryspace[theMission3]-=1;
+    gameManager.inventoryspace[theMission1] -= 1;
+    gameManager.inventoryspace[theMission2] -= 1;
+    gameManager.inventoryspace[theMission3] -= 1;
     // para verir
-    missionComplete=false;
+    missionComplete = false;
     Debug.Log("A");
     StartCoroutine(MissionMaker());
     yield break;
  }
  void Start()
  {
- gameManager=GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+ gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
  StartCoroutine(MissionMaker());
  }
  void FixedUpdate()
  {
-    timerforFreegold+=Time.deltaTime;
-    if(timerforFreegold>=60)
+    timerforFreegold += Time.deltaTime;
+    if(timerforFreegold >= 60)
     {
-        timerforFreegold=0;
-        gameManager.Gold+=50;
+        timerforFreegold = 0;
+        gameManager.Gold += 50;
     }
  }
 
