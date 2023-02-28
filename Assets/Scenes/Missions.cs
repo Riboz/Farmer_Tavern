@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using DG.Tweening;
 public class Missions : MonoBehaviour
 {
 public int theMission1,theMission2,theMission3;
+
 public float coolDown,timerforFreegold;
+public GameObject Car;
 GameManager gameManager;
 public bool missionComplete;
   IEnumerator MissionMaker()
@@ -21,9 +23,16 @@ public bool missionComplete;
     if(theMission1 != theMission2 && theMission2 != theMission3 && theMission1 != theMission3)
     {
         //araba gelir
+         Car = Instantiate(Car , new Vector2(-18,-8) , Quaternion.identity );
+
+        Car.transform.DOLocalMoveX( 0 , coolDown );
+        
         yield return new WaitForSeconds(coolDown);
+        
         Debug.Log("b");
+        
         StartCoroutine(Checker());
+        
         yield break;
     }
     else
@@ -46,7 +55,9 @@ IEnumerator Checker()
 IEnumerator CompleteMission()
  {
     // araba gider görev paneli gider
+   Car.transform.DOLocalMoveX( 18, coolDown );
     yield return new WaitForSeconds(coolDown);
+     
     gameManager.inventoryspace[theMission1] -= 1;
     gameManager.inventoryspace[theMission2] -= 1;
     gameManager.inventoryspace[theMission3] -= 1;

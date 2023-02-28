@@ -25084,6 +25084,7 @@ MonoBehaviour:
   theMission3: 0
   coolDown: 1
   timerforFreegold: 0
+  Car: {fileID: 8096246990393402374, guid: 4f5deabbfe0d6754b835a7e9482e1764, type: 3}
   missionComplete: 0
 --- !u!1 &1597637358
 GameObject:
