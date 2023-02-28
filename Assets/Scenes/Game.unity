@@ -25082,7 +25082,7 @@ MonoBehaviour:
   theMission1: 0
   theMission2: 0
   theMission3: 0
-  coolDown: 1
+  coolDown: 2
   timerforFreegold: 0
   Car: {fileID: 8096246990393402374, guid: 4f5deabbfe0d6754b835a7e9482e1764, type: 3}
   missionComplete: 0
