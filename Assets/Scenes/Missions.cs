@@ -76,15 +76,18 @@ IEnumerator CompleteMission()
  {
     // araba gider görev paneli gider ve imageler daha canlı gözükür
     missionPanel.transform.DOMoveY(-150,coolDown/3);
+
     Car.transform.DOLocalMoveX( 18, coolDown/2 );
-    yield return new WaitForSeconds(coolDown);
+    yield return new WaitForSeconds(coolDown/2);
+    gameManager.Gold+=200;  
+    yield return new WaitForSeconds(coolDown/2);
      
     gameManager.inventoryspace[theMission1] -= 1;
     gameManager.inventoryspace[theMission2] -= 1;
     gameManager.inventoryspace[theMission3] -= 1;
     // para verir
     missionComplete = false;
-    gameManager.Gold+=200;
+    
     Debug.Log("A");
     StartCoroutine(MissionMaker());
     yield break;
