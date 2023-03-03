@@ -126,19 +126,19 @@ public class GameManager : MonoBehaviour
        }
         else if(type == "Tomato")
        {
-            inventoryspace[3] += 1;
+            inventoryspace[3] += Random.Range(1,4);
        }
        else if(type == "Carrot")
        {
-            inventoryspace[4] += 1;
+            inventoryspace[4] += Random.Range(1,4);
        }
         else if(type == "Turp")
        {
-            inventoryspace[5] += 1;
+            inventoryspace[5] += Random.Range(1,4);
        }
        else if(type == "Potato")
        {
-            inventoryspace[6] += 1;
+            inventoryspace[6] += Random.Range(1,4);
        }
 
 
