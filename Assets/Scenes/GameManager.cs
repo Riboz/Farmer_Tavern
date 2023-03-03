@@ -29,10 +29,6 @@ public class GameManager : MonoBehaviour
     //ınventorye egg coton mil carrot fln koy
     dot=GameObject.FindWithTag("Dot").GetComponent<DOTweenManager>();
     
-    
-    
-    
-    
   }
  
 

@@ -11,4 +11,5 @@ public bool isAnimal;
     {
         tile=thisTile;
     }
+    
 }

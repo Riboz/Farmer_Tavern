@@ -35,6 +35,7 @@ public bool missionComplete;
          mission2I.GetComponent<Image>().sprite=Sprites[theMission2];
 
          mission3I.GetComponent<Image>().sprite=Sprites[theMission3];
+         
 
         Car.transform.DOLocalMoveX( 0 , coolDown/2 );
 
@@ -77,10 +78,10 @@ IEnumerator CompleteMission()
     // araba gider görev paneli gider ve imageler daha canlı gözükür
     missionPanel.transform.DOMoveY(-150,coolDown/3);
 
-    Car.transform.DOLocalMoveX( 18, coolDown/2 );
-    yield return new WaitForSeconds(coolDown/2);
+    Car.transform.DOLocalMoveX( 18, coolDown / 2 );
+    yield return new WaitForSeconds(coolDown / 2 );
     gameManager.Gold+=200;  
-    yield return new WaitForSeconds(coolDown/2);
+    yield return new WaitForSeconds(coolDown / 2 );
      
     gameManager.inventoryspace[theMission1] -= 1;
     gameManager.inventoryspace[theMission2] -= 1;
