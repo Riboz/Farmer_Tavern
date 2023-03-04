@@ -120,6 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Cost: 15
+  Which: 1
   isAnimal: 1
   tile: {fileID: 0}
   Type: 

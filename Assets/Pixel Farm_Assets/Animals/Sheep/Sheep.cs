@@ -20,5 +20,6 @@ public class Sheep : Animal
         {
            Takes_Items();
         }
+        Player.GetComponent<Tile>().isOccupied=true;
     }
 }

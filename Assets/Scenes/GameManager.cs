@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
   [Header("Inventory")]
   public int Gold,currentCost;
   public int [] inventoryspace;
+
   
   
   [Header("UI")]
@@ -63,7 +64,7 @@ public class GameManager : MonoBehaviour
                 {
                     Instantiate(buyable_place , nearestTile.transform.position , Quaternion.identity);
                 }
-        
+                
                 buyable_place = null;
                 nearestTile.isOccupied = true;
                 grid.SetActive(false);
@@ -71,6 +72,12 @@ public class GameManager : MonoBehaviour
                 Cursor.visible = true;
                 dot.shopButton.gameObject.SetActive(true);
                 changeOpButton.gameObject.SetActive(false);
+                /* 
+                byuable_place
+                nearestile.isoccupied
+                buyable_place transform
+                
+                */
                 
             }
         }

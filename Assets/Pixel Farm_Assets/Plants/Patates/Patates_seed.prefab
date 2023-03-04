@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Cost: 40
+  Which: 5
   isAnimal: 0
   tile: {fileID: 0}
   seedSprite: []
