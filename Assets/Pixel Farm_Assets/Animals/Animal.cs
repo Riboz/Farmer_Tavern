@@ -13,7 +13,7 @@ public class Animal : Buyable
 
    [Header("Animal Dropping")]
    int cooldown_Drop,dropped_item_Count;
-   GameObject spawned_Item,spawning_Item;
+   public GameObject spawned_Item,spawning_Item;
 
    [Header("animal is active ?")]
    bool drop_Cantook,  active_Animal;

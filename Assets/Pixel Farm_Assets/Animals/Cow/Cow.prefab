@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 1712482914318470431}
   - component: {fileID: -7440029044809586214}
   - component: {fileID: 9201920716673732359}
+  - component: {fileID: -5260061594776077053}
   m_Layer: 0
   m_Name: Cow
-  m_TagString: Untagged
+  m_TagString: Buyable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -122,7 +123,6 @@ MonoBehaviour:
   Cost: 15
   Which: 1
   isAnimal: 1
-  tile: {fileID: 0}
   Type: 
   cooldown_Drop_cow: 15
   milk: {fileID: 9111157174785220528, guid: 04b80a490dea662469fee724e2f3c3dd, type: 3}
@@ -140,7 +140,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.00843513, y: -0.21720427}
+  m_Offset: {x: 0.009815514, y: -0.16853595}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -151,5 +151,26 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.0160561, y: 0.6322583}
+  m_Size: {x: 0.31442153, y: 0.29969168}
   m_EdgeRadius: 0
+--- !u!50 &-5260061594776077053
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1712482914318470418}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

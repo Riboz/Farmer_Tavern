@@ -13,14 +13,30 @@ private void Start()
 }
 void Update()
 {
-    if(isOccupied== true)
+    if(isOccupied == true)
     {
-        Rend.color=RedColor;
+        Rend.color = RedColor;
 
     }
     else
     {
     Rend.color=GreenColor;
+    }
+}
+void OnTriggerEnter2D(Collider2D coll)
+{
+    if(coll.gameObject.tag == "Buyable")
+    {
+        Debug.Log("ALiverli");
+        isOccupied=true;
+    }
+}
+void OnTriggerExit2D(Collider2D coll)
+{
+    if(coll.gameObject.tag == "Buyable")
+    {
+        Debug.Log("ALiverli");
+        isOccupied = false;
     }
 }
 

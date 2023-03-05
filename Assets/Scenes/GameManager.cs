@@ -29,8 +29,10 @@ public class GameManager : MonoBehaviour
   {
     //ınventorye egg coton mil carrot fln koy
     dot=GameObject.FindWithTag("Dot").GetComponent<DOTweenManager>();
+   
     
   }
+  
  
 
     // Update is called once per frame
@@ -55,7 +57,7 @@ public class GameManager : MonoBehaviour
             }
             if(nearestTile.isOccupied == false)
             {
-                buyable_place.TileFound(nearestTile);
+                buyable_place.GetComponent<Buyable>().tile=nearestTile;
                 if(buyable_place.GetComponent<Buyable>().isAnimal)
                 {
                     Instantiate(buyable_place , nearestTile.transform.position + new Vector3(0,0.2f,0) , Quaternion.identity);

@@ -11,6 +11,7 @@ public class SaveSytem : MonoBehaviour
 
     
     public static List<Buyable> buyables=new List<Buyable>();
+    
     const string build_Sub = "/build";
     const string build_Count_Sub = "/build.count";
     void Awake()
@@ -75,7 +76,6 @@ public class SaveSytem : MonoBehaviour
                     stream.Close();
 
                     Vector3 position = new Vector3(data.position[0] , data.position[1] , data.position[2]);
-                   
                     
                     if(data.which==0)
                     {
@@ -83,47 +83,51 @@ public class SaveSytem : MonoBehaviour
                         Buyable buyable = Instantiate(chicken,position,Quaternion.identity);
                         
                         
+                        
                     }
                     else if(data.which==1)
                     {
                          
                         Buyable buyable = Instantiate(cow,position,Quaternion.identity);
+
+
                        
                     }
                     else if(data.which==2)
                     {
                         Buyable buyable = Instantiate(sheep,position,Quaternion.identity);
                     
+                     
                         
                     }
                     else if(data.which==3)
                     {
                         
                         Buyable buyable = Instantiate(tomato,position,Quaternion.identity);
+                       
                       
                     }
                     else if(data.which==4)
                     {
                           
                         Buyable buyable = Instantiate(carrot,position,Quaternion.identity);
-                        
+                         
+                       
                     }
                     else if(data.which==5)
                     {
                          
                         Buyable buyable = Instantiate(patato,position,Quaternion.identity);
                        
+                        
                     }
                     else if(data.which==6)
                     {
                           
                         Buyable buyable = Instantiate(turp,position,Quaternion.identity);
-                       
-                    }
-                   
 
-                    
-                    
+                       
+                    } 
                     
                 }
                 else
@@ -133,6 +137,7 @@ public class SaveSytem : MonoBehaviour
        
             }
     }
+    
 
 }
 

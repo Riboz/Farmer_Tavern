@@ -15,9 +15,9 @@ public int which;
 
 public BuyableData(Buyable buyable)
 { 
-
+    
     which=buyable.Which;
-  
+    
     position[0] = buyable.transform.position.x;
     position[1] = buyable.transform.position.y;
     position[2] = buyable.transform.position.z;
@@ -28,6 +28,7 @@ public BuyableData(Buyable buyable)
 
 
 }
+
 
 
 

@@ -13,6 +13,7 @@ public class Sheep : Animal
     {
         the_Sheep=this.transform.position+new Vector3(0,0.25f,0);
         active(cooldown_Drop_sheep,Cotton,sheep_Sound,the_Sheep,"Cotton");
+      
     }
     void OnTriggerEnter2D(Collider2D Player)
     {
@@ -20,6 +21,7 @@ public class Sheep : Animal
         {
            Takes_Items();
         }
-        Player.GetComponent<Tile>().isOccupied=true;
+         
+        
     }
 }

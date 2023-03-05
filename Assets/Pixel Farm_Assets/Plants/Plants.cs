@@ -47,7 +47,7 @@ public class Plants : Buyable
         if(canHarvest)
         {
 
-            tile.GetComponent<Tile>().isOccupied=false;
+           if(tile!=null)tile.isOccupied=false;
             gameManager.Adding(Type);
             Instantiate(harvest,this.transform.position,Quaternion.identity);
             Destroy(this.gameObject);

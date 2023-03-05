@@ -14,6 +14,7 @@ public class Cow : Animal
     {
         The_cow=this.transform.position+new Vector3(0,0.35f,0);
         active(cooldown_Drop_cow,milk,Cow_Sound,The_cow,"Milk");
+        
     }
     
     void OnTriggerEnter2D(Collider2D Player)
@@ -22,5 +23,6 @@ public class Cow : Animal
         {
            Takes_Items();
         }
+
     }
 }

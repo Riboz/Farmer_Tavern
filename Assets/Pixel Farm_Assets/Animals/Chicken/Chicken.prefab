@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 8191019347835938339}
   - component: {fileID: 1781853171164677610}
   - component: {fileID: 1943915584840282763}
+  - component: {fileID: 8977132466185376735}
   m_Layer: 0
   m_Name: Chicken
-  m_TagString: Untagged
+  m_TagString: Buyable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -120,8 +121,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Cost: 12
+  Which: 0
   isAnimal: 1
-  tile: {fileID: 0}
   Type: 
   cooldown_Drop_chicken: 25
   egg: {fileID: 5809760335228777010, guid: d75a77a041dacb74cb1ca9046ee63023, type: 3}
@@ -139,7 +140,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0034746528, y: -0.2883939}
+  m_Offset: {x: 0.004129529, y: -0.4075263}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -150,5 +151,26 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.0736159, y: 0.48987877}
+  m_Size: {x: 0.24729335, y: 0.25161397}
   m_EdgeRadius: 0
+--- !u!50 &8977132466185376735
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8191019347835938366}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
