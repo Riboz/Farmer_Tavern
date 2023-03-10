@@ -99,12 +99,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76e6d0d618a9c37488956364c14e4439, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cost: 20
+  Cost: 25
   Which: 3
   isAnimal: 0
+  tile: {fileID: 0}
   seedSprite: []
   harvest: {fileID: 1221116343200394248, guid: 08e9badfd6b80854a9d537b3fac3772f, type: 3}
-  cooldown: 10
+  cooldown: 30
   domatesSprites:
   - {fileID: 92966241, guid: 14d0a109d8af35449835640bca96372c, type: 3}
   - {fileID: 1518908680, guid: 14d0a109d8af35449835640bca96372c, type: 3}

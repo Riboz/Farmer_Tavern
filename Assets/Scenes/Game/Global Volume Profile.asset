@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Global Volume Profile
   m_EditorClassIdentifier: 
   components:
-  - {fileID: 7247919821523956159}
   - {fileID: 401361867409874389}
+  - {fileID: 5950435315884620072}
 --- !u!114 &401361867409874389
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -36,14 +36,14 @@ MonoBehaviour:
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.319
+    m_Value: 0.162
   smoothness:
     m_OverrideState: 1
-    m_Value: 0.618
+    m_Value: 1
   rounded:
     m_OverrideState: 1
-    m_Value: 0
---- !u!114 &7247919821523956159
+    m_Value: 1
+--- !u!114 &5950435315884620072
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -52,19 +52,35 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29fa0085f50d5e54f8144f766051a691, type: 3}
-  m_Name: FilmGrain
+  m_Script: {fileID: 11500000, guid: 0b2db86121404754db890f4c8dfe81b2, type: 3}
+  m_Name: Bloom
   m_EditorClassIdentifier: 
   active: 1
-  type:
+  threshold:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0.8
   intensity:
     m_OverrideState: 1
-    m_Value: 1
-  response:
+    m_Value: 2.5
+  scatter:
     m_OverrideState: 1
     m_Value: 1
-  texture:
+  clamp:
+    m_OverrideState: 1
+    m_Value: 65472
+  tint:
+    m_OverrideState: 1
+    m_Value: {r: 0.8220583, g: 1, b: 0.7490566, a: 1}
+  highQualityFiltering:
+    m_OverrideState: 1
+    m_Value: 1
+  skipIterations:
+    m_OverrideState: 1
+    m_Value: 7
+  dirtTexture:
     m_OverrideState: 1
     m_Value: {fileID: 0}
+    dimension: 1
+  dirtIntensity:
+    m_OverrideState: 1
+    m_Value: 2

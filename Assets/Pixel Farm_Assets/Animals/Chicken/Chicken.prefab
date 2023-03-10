@@ -120,11 +120,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 907aa60a082f97c48bd873102f553f64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cost: 12
+  Cost: 50
   Which: 0
   isAnimal: 1
+  tile: {fileID: 0}
+  spawned_Item: {fileID: 0}
+  spawning_Item: {fileID: 0}
   Type: 
-  cooldown_Drop_chicken: 25
+  cooldown_Drop_chicken: 60
   egg: {fileID: 5809760335228777010, guid: d75a77a041dacb74cb1ca9046ee63023, type: 3}
   chicken_Sound: {fileID: 0}
 --- !u!61 &1943915584840282763

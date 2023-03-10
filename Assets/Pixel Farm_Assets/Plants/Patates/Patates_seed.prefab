@@ -99,12 +99,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9efa85ebe66da78479bf7026e5cc23b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cost: 40
+  Cost: 35
   Which: 5
   isAnimal: 0
+  tile: {fileID: 0}
   seedSprite: []
   harvest: {fileID: 1221116343200394248, guid: 08e9badfd6b80854a9d537b3fac3772f, type: 3}
-  cooldown: 15
+  cooldown: 30
   PatatoSprites:
   - {fileID: 557793331, guid: 14d0a109d8af35449835640bca96372c, type: 3}
   - {fileID: 1385480676, guid: 14d0a109d8af35449835640bca96372c, type: 3}

@@ -28,7 +28,7 @@ public bool missionComplete;
     if(theMission1 != theMission2 && theMission2 != theMission3 && theMission1 != theMission3)
     {
         //araba gelir
-         Car = Instantiate(Car , new Vector2(-18,-8) , Quaternion.identity );
+         Car = Instantiate(Car , new Vector2(-18,-6.5f) , Quaternion.identity );
 
          mission1I.GetComponent<Image>().sprite=Sprites[theMission1];
 
@@ -80,12 +80,14 @@ IEnumerator CompleteMission()
 
     Car.transform.DOLocalMoveX( 18, coolDown / 2 );
     yield return new WaitForSeconds(coolDown / 2 );
-    gameManager.Gold+=200;  
+    gameManager.Gold+=50;  
     yield return new WaitForSeconds(coolDown / 2 );
      
     gameManager.inventoryspace[theMission1] -= 1;
     gameManager.inventoryspace[theMission2] -= 1;
     gameManager.inventoryspace[theMission3] -= 1;
+    saveinventory();
+    
     // para verir
     missionComplete = false;
     
@@ -93,18 +95,38 @@ IEnumerator CompleteMission()
     StartCoroutine(MissionMaker());
     yield break;
  }
+ public void saveinventory()
+ {
+    PlayerPrefs.SetInt("inventory.length",gameManager.inventoryspace.Length);
+    PlayerPrefs.SetInt("money",gameManager.Gold);
+    for(int i=0;i<gameManager.inventoryspace.Length;i++)
+    {
+        PlayerPrefs.SetInt("inventory"+i,gameManager.inventoryspace[i]);
+    }
+ }
+ public void Getinventory()
+ {
+    gameManager.Gold=PlayerPrefs.GetInt("money");
+    gameManager.Gold_Display.text=""+gameManager.Gold;
+    for(int i=0;i<PlayerPrefs.GetInt("inventory.length",0);i++)
+    {
+        gameManager.inventoryspace[i]=PlayerPrefs.GetInt("inventory"+i);
+    }
+ }
  void Start()
  {
  gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
  StartCoroutine(MissionMaker());
+ Getinventory();
  }
  void FixedUpdate()
  {
     timerforFreegold += Time.deltaTime;
     if(timerforFreegold >= 60)
     {
+        saveinventory();
         timerforFreegold = 0;
-        gameManager.Gold += 50;
+        gameManager.Gold += 10;
     }
  }
 

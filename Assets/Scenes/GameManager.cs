@@ -120,6 +120,7 @@ public class GameManager : MonoBehaviour
        if(type == "Egg")
        {
             inventoryspace[0] += 1;
+            //buraları playerprefsle kaydet  
        }
        else if(type == "Milk")
        {
