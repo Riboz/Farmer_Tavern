@@ -8,6 +8,7 @@ public class DOTweenManager : MonoBehaviour
     // Start is called before the first frame update
     [Header("Buttons")]
     [SerializeField]public Button shopButton;
+    public Inventory inventory;
 
     [Header("Places")]
     [SerializeField]private GameObject buyArea;
@@ -21,6 +22,12 @@ public class DOTweenManager : MonoBehaviour
         buyArea.transform.DOMoveX(1040,0.2f);
         
         shopButton.gameObject.SetActive(false);
+
+        inventory.inventoryButton.gameObject.SetActive(false);
+        
+
+         inventory.delayButton.gameObject.SetActive(false);
+
        
     }
     
@@ -35,6 +42,9 @@ public class DOTweenManager : MonoBehaviour
         
         buyArea.transform.DOMoveX(-500,0.2f);
         shopButton.gameObject.SetActive(true);
+        inventory.inventoryButton.gameObject.SetActive(true);
+   
+         inventory.delayButton.gameObject.SetActive(true);
        
     }
     public void TavernArea()

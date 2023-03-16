@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 // Tüm Animal objelerinde olucak olan class
 public class Animal : Buyable
 {
@@ -75,7 +76,8 @@ public class Animal : Buyable
         if(drop_Cantook)
         {
             gameManager.Adding(Type);
-            Destroy(spawned_Item);
+            spawned_Item.transform.DOPunchScale(new Vector3(1.5f,1.5f,1.5f),0.5f,2,1);
+            Destroy(spawned_Item,0.5f);
             dropped_item_Count=0;
             drop_Cantook=false;
             //forla dizinin null una eklesin
@@ -83,6 +85,8 @@ public class Animal : Buyable
             //player.Earn_What(bu bir dizidir)+=egg;
         }
    }
+  
+   
   // ineğin olduğu gridi Otomatik olarak bulan bir function yarat ve bu functionu activein içine koy sonrasında ise 
   // ineğin olduğa gride tıklanıldığında inekdeki (animallardaki) Alınmaya hazır olan itemler bize gelsin ke gelirken ineğin altındaki item gitsin;
   // bunun için bütün animallar playere bağlı olmalı vb vb

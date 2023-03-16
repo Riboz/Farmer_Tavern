@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
   [Header("Inventory")]
   public int Gold,currentCost;
   public int [] inventoryspace;
+  public Inventory inventory;
 
   
   
@@ -74,6 +75,9 @@ public class GameManager : MonoBehaviour
                 Cursor.visible = true;
                 dot.shopButton.gameObject.SetActive(true);
                 changeOpButton.gameObject.SetActive(false);
+                inventory.inventoryButton.gameObject.SetActive(true);
+                
+                inventory.delayButton.gameObject.SetActive(true);
                 /* 
                 byuable_place
                 nearestile.isoccupied
@@ -91,6 +95,7 @@ public class GameManager : MonoBehaviour
         grid.SetActive(false);
         customCursor.gameObject.SetActive(false);
         Cursor.visible = true;
+      
         dot.shopButton.gameObject.SetActive(true);
         changeOpinion = false;
         
@@ -174,6 +179,8 @@ public class GameManager : MonoBehaviour
         changeOpinion=true;
         Gold+=currentCost;
         changeOpButton.gameObject.SetActive(false);
+        inventory.inventoryButton.gameObject.SetActive(true);
+        
     }
     
 }
