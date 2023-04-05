@@ -17,7 +17,8 @@ public class GameManager : MonoBehaviour
   public Text Gold_Display;
   public Button changeOpButton;
   [Header("Others")]
-  public GameObject grid;
+  public GameObject grid,crow;
+  public Transform[] crowspawn;
   public CustomCursor customCursor;
   public Tile[] tiles;
   Buyable buyable_place;
@@ -30,6 +31,7 @@ public class GameManager : MonoBehaviour
   {
     //ınventorye egg coton mil carrot fln koy
     dot=GameObject.FindWithTag("Dot").GetComponent<DOTweenManager>();
+    StartCoroutine(CrowSpawner());
    
     
   }
@@ -137,19 +139,19 @@ public class GameManager : MonoBehaviour
        }
         else if(type == "Tomato")
        {
-            inventoryspace[3] += Random.Range(1,4);
+            inventoryspace[3] += Random.Range(1,5);
        }
        else if(type == "Carrot")
        {
-            inventoryspace[4] += Random.Range(1,4);
+            inventoryspace[4] += Random.Range(1,5);
        }
         else if(type == "Turp")
        {
-            inventoryspace[5] += Random.Range(1,4);
+            inventoryspace[5] += Random.Range(1,5);
        }
        else if(type == "Potato")
        {
-            inventoryspace[6] += Random.Range(1,4);
+            inventoryspace[6] += Random.Range(1,5);
        }
 
 
@@ -182,5 +184,15 @@ public class GameManager : MonoBehaviour
         inventory.inventoryButton.gameObject.SetActive(true);
         
     }
-    
+    public IEnumerator CrowSpawner()
+    {
+        while(true)
+        {
+            yield return new WaitForSeconds((int)Random.Range(15,60));
+
+            Instantiate(crow,crowspawn[Random.Range(0,crowspawn.Length)].position,Quaternion.identity);
+            
+        }
+    }
+
 }

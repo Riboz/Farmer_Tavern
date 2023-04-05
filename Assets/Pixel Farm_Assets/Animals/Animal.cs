@@ -9,7 +9,7 @@ public class Animal : Buyable
     Animator animator;
 
    [Header("Animal_Voice")]
-    AudioSource animal_Audiosource;
+   public AudioSource animal_Audiosource;
     AudioClip animal_Audioclip;
 
    [Header("Animal Dropping")]
@@ -37,7 +37,7 @@ public class Animal : Buyable
 
         StartCoroutine(Animal_Drop(animal_cooldown_drop,drop_Item,AnimalT));   
 
-      //  StartCoroutine(Animal_Voice(audio_animal));
+        StartCoroutine(Animal_Voice(audio_animal));
 
         // eğer 54. satır çalışmazsa buranın altına bak
         return true;
@@ -104,7 +104,7 @@ public class Animal : Buyable
         while(active_Animal)
         {
             //4-9 saniyeler arasında ineği bağırttırıyor
-            yield return new WaitForSeconds((int)Random.Range(4,10));
+            yield return new WaitForSeconds((int)Random.Range(20,80));
 
             animal_Audiosource.PlayOneShot(animal_Audioclip);
         }

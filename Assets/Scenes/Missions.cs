@@ -13,7 +13,7 @@ public GameObject missionPanel;
 
 public Image mission1I,mission2I,mission3I;
  public int countmission=1,countmission2=1,countmission3=1;
- 
+ public ParticleSystem wingold;
 public Sprite[] Sprites;
 public Text mis1,mis2,mis3;
  // 0 egg/ 1 milk/ 2 cotton /3 tomato/ 4 carrot/ 5 turp /6 potato
@@ -104,6 +104,7 @@ IEnumerator Checker()
             }
             else
                 {
+                   
                     Button.interactable=false;
                     missionComplete=false;
                 }
@@ -123,6 +124,7 @@ IEnumerator Checker()
         
         StartCoroutine(CompleteMission());
         Button.interactable=false;
+        Instantiate(wingold,new Vector2(0,-7),Quaternion.identity);
         
     }
  }
@@ -132,7 +134,7 @@ IEnumerator CompleteMission()
     
 
 
-    gameManager.Gold+=50;  
+    gameManager.Gold+=75;  
 
     gameManager.inventoryspace[theMission1] -= countmission;
     gameManager.inventoryspace[theMission2] -= countmission2;
@@ -183,6 +185,30 @@ IEnumerator CompleteMission()
  }
  void FixedUpdate()
  {
+     if( gameManager.inventoryspace[theMission3]-countmission3<0 )
+        {
+            mission3I.GetComponent<Image>().color=Color.red;
+        }
+        else
+        {
+            mission3I.GetComponent<Image>().color=Color.white;
+        }
+     if( gameManager.inventoryspace[theMission2]-countmission2<0 )
+        {
+            mission2I.GetComponent<Image>().color=Color.red;
+        }
+         else
+        {
+            mission2I.GetComponent<Image>().color=Color.white;
+        }
+        if( gameManager.inventoryspace[theMission1]-countmission<0 )
+        {
+            mission1I.GetComponent<Image>().color=Color.red;
+        }
+         else
+        {
+            mission1I.GetComponent<Image>().color=Color.white;
+        }
     timerforFreegold += Time.deltaTime;
     if(timerforFreegold >= 60)
     {

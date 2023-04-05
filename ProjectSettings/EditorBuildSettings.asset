@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
+    path: Assets/Scenes/Giris.unity
+    guid: b04a95189993d8f48ae23d8ec826e4c7
+  - enabled: 1
     path: Assets/Scenes/Game.unity
     guid: 9fd68c2cd797d414982f4e0aeb1c453e
   m_configObjects: {}

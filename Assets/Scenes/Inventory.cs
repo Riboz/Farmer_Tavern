@@ -8,7 +8,7 @@ public class Inventory : MonoBehaviour
     // Start is called before the first frame update
     GameManager gameManager;
     [SerializeField]private Button[] inventoryspace; 
-    [SerializeField]private GameObject inventoryPanel,missionPanel;
+    [SerializeField]private GameObject inventoryPanel;
     [SerializeField]public Button inventoryButton,shopButton,delayButton;
     // shop açıkken invent açık olamaz bu durumu düzelt yarın
     // 0 egg/ 1 milk/ 2 cotton /3 tomato/ 4 carrot/ 5 turp /6 potato
@@ -58,33 +58,7 @@ public class Inventory : MonoBehaviour
 
     }
 
-    public void MissionPanelOut()
-    {
-      missionPanel.transform.DOMoveX(1670,0.2f);
-      
-     inventoryButton.gameObject.SetActive(false);
-
-     shopButton.gameObject.SetActive(false);
-     
-     
-
-     delayButton.gameObject.SetActive(false);
-
-    }
-    public void MissionPanelIn()
-    {
-         missionPanel.transform.DOMoveX(2300,0.2f);
-         
-        inventoryButton.gameObject.SetActive(true);
-
-        shopButton.gameObject.SetActive(true);
-     
-        
-
-        delayButton.gameObject.SetActive(true);
-
-    }
-
+   
    
      
    
